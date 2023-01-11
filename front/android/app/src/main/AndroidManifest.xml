@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.netflix.front">
+    package="com.example.front">
    <application
         android:label="front"
         android:name="${applicationName}"
