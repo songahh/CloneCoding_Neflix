@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/screen/home_screen.dart';
 import 'package:front/widget/bottom_bar.dart';
 
 void main() => runApp(MyApp());
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
             child: Scaffold(
               body: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
-                children: [Container(child: Center(child: Text('home'))),
+                children: [HomeScreen(),
                            Container(child: Center(child: Text('search'))),
                            Container(child: Center(child: Text('save'))),
                            Container(child: Center(child: Text('more')))],
