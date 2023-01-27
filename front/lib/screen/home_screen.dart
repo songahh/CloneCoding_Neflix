@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/widget/carousel_slider.dart';
 
 import '../model/model_movie.dart';
 
@@ -8,15 +9,32 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Movie> movies = [
-    Movie.fromMap(
-        {
-          'title': '사랑의 불시착',
-          'keyword': '사랑/로맨스/판타지',
-          'poster': 'test_movie_1.png',
-          'like': false
-        }
-    )
+    Movie.fromMap({
+      'title': '사랑의 불시착',
+      'keyword': '사랑/로맨스/판타지',
+      'poster': 'test_movie_1.png',
+      'like': false
+    }),
+    Movie.fromMap({
+      'title': '사랑의 불시착',
+      'keyword': '사랑/로맨스/판타지',
+      'poster': 'test_movie_1.png',
+      'like': false
+    }),
+    Movie.fromMap({
+      'title': '사랑의 불시착',
+      'keyword': '사랑/로맨스/판타지',
+      'poster': 'test_movie_1.png',
+      'like': false
+    }),
+    Movie.fromMap({
+      'title': '사랑의 불시착',
+      'keyword': '사랑/로맨스/판타지',
+      'poster': 'test_movie_1.png',
+      'like': false
+    })
   ];
+
   @override
   void initState() {
     super.initState();
@@ -24,7 +42,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return TopBar();
+    return ListView(children: <Widget>[
+      Stack(
+        children: <Widget>[
+          CarouselImage(movies: movies),
+          TopBar(),
+        ],
+      )
+    ]);
   }
 }
 
@@ -48,14 +73,14 @@ class TopBar extends StatelessWidget {
           )),
           Container(
               child: Text(
-                '영화',
-                style: TextStyle(fontSize: 14),
-              )),
+            '영화',
+            style: TextStyle(fontSize: 14),
+          )),
           Container(
               child: Text(
-                '내가 찜한 콘텐츠',
-                style: TextStyle(fontSize: 14),
-              )),
+            '내가 찜한 콘텐츠',
+            style: TextStyle(fontSize: 14),
+          )),
         ],
       ),
     );
